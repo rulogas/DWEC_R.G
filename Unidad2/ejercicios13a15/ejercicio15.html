@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio15</title>
+    <script type="text/javascript">
+
+    var diasSemana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes",
+    "Sábado", "Domingo"];
+    function mostrarDiasSemana() {
+      for (var i = 0; i < diasSemana.length; i++) {
+        document.write(diasSemana[i]+"<br>");
+      }
+    }
+    function numeroEnLetras() {
+      do {
+        var numero=prompt("introduce numero");
+        if (isFinite(numero)&&isNaN(numero)==false) {
+          for (var i = 0; i < diasSemana.length; i++) {
+            if (numero==i+1) {
+              alert(diasSemana[i]);
+            }
+          }
+        }else {
+          alert("El numero introducido no es valido")
+        }
+      } while (isFinite(numero)==false|| isNaN(numero)==true);
+
+
+      }
+
+    mostrarDiasSemana();
+    numeroEnLetras();
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

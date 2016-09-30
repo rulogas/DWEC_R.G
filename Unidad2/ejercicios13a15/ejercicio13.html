@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ejercicio13</title>
+    <script	>
+    var año=prompt("introduce año de nacimiento")
+
+    function calculaEdad(año) {
+      var fecha=new Date();
+      var n=fecha.getFullYear();
+      var edad=n-año;
+      return edad;
+    }
+
+    var edad=calculaEdad(año);
+    document.write("tu edad es:"+edad);
+    </script>
+  </head>
+  <body>
+
+
+  </body>
+</html>
