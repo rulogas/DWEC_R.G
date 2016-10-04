@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ejercicio14</title>
+    <script	>
+    var año=prompt("introduce año de nacimiento")
+
+    function calculaEdad(año) {
+      var fecha=new Date();
+      var n=fecha.getFullYear();
+      var edad=n-año;
+      return edad;
+    }
+    function saludoEdad(año) {
+      if (año<18) {
+        document.write("Que tal colega")
+      }
+      else if (año>=18) {
+        document.write("Que tal estas?")
+      }
+      else if(año>=65){
+        document.write("hola caballero")
+      }
+    }
+
+    var edad=calculaEdad(año);
+    document.write("tu edad es:"+edad+"<br>");
+    saludoEdad(año);
+    </script>
+  </head>
+  <body>
+
+
+  </body>
+</html>
