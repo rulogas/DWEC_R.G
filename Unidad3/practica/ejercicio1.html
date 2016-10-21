@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unidad 3 practica1</title>
+    <script type="text/javascript">
+      function contarPalabras() {
+        var palabras=new Array();
+        var palabralarga;
+        var palabracorta;
+
+        max=0;
+        min=Number.MAX_VALUE;
+        palabras=formulario.area.value.split(" ");
+        for (var i = 0; i < palabras.length; i++) {
+          if (palabras[i].length>max) {
+            max=palabras[i].length;
+            palabralarga=palabras[i];
+          }
+          if (palabras[i].length<min) {
+            min=palabras[i].length;
+            palabracorta=palabras[i];
+          }
+        }
+
+
+        console.log(palabras);
+        var ventana= window.open("","", "width=200,heigth=100");
+        ventana.document.write('<meta charset="utf-8">');
+        ventana.document.write('<b>Primera palabra</b> '+palabras[0]);
+        ventana.document.write('<br><b>Ultima palabra</b> '+palabras[palabras.length-1]);
+        ventana.document.write('<br><b>la palabra mas larga</b> '+palabralarga);
+        ventana.document.write('<br><b>la palabra mas corta</b> '+palabracorta);
+        ventana.document.write('<br><b>listado de palabras en orden alfabetico</b> '+palabras.sort().join('-'));
+        ventana.document.write('<br><b>Numero de palabras</b> '+palabras.length);
+
+      }
+    </script>
+    <style media="screen">
+      textarea input{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Manipular Arrays</h1>
+    <form name="formulario">
+      <p>
+        Introduce algunas palabras
+      </p>
+      <textarea name="area" rows="3" cols="40"></textarea>
+      <br>
+      <input type="button" name="boton" value="Aceptar" onclick="contarPalabras()">
+    </form>
+
+  </body>
+</html>
