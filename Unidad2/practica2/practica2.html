@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio1</title>
+    <script>
+    var crono=new Crono();
+	var inicio=0;
+  var timeout=0;
+  var ventana;
+  var reinicio=0;
+
+	function empezar(boton)
+	{
+
+
+
+    if (boton.value=="Empezar") {
+      ventana= window.open("","", "width=200,heigth=100");
+      ventana.document.write("00:00:00");
+      inicio=new Date().getTime();
+      funcionando();
+    }
+    else  if(boton.value=="Reiniciar"){
+      inicio=new Date().getTime();
+      funcionando(3);
+
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+    function funcionando(numero) {
+      var actual = new Date().getTime();
+
+
+  		var diff=new Date(actual-inicio);
+
+
+  		var result=LeadingZero(diff.getUTCHours())+":"+LeadingZero(diff.getUTCMinutes())+":"+LeadingZero(diff.getUTCSeconds());
+      timeout=setTimeout("funcionando()",1000);
+      ventana.document.body.innerHTML =result;
+      if (numero.value=="3") {
+        var actual2 = new Date().getTime();
+
+
+    		var diff2=new Date(actual2-reinicio);
+        var result2=LeadingZero(diff2.getUTCHours())+":"+LeadingZero(diff2.getUTCMinutes())+":"+LeadingZero(diff2.getUTCSeconds());
+        timeout=setTimeout("funcionando(3)",1000);
+        ventana.document.body.innerHTML =result2;
+      }
+
+    }
+
+	function LeadingZero(Time) {
+		return (Time < 10) ? "0" + Time : + Time;
+	}
+    </script>
+  </head>
+  <body>
+    <h1>Cronometro</h1>
+    <div>
+      <input type="button" name="name" value="Empezar" onclick="empezar(this)">
+      <input type="button" name="name" value="Reiniciar" onclick="empezar(this)">
+    </div>
+  </body>
+</html>
