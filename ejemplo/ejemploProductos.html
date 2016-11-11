@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejemplo</title>
+    <script type="text/javascript">
+
+
+      function Producto(codigo,nombre, ingredientes) {
+        this.codigo=codigo;
+        this.nombre=nombre
+        var precio=(Math.random()*2+1);
+        this.ingredientes=ingredientes.sort();
+
+        this.imprimeDatos=function() {
+          document.write("codigo:"+this.codigo+"<br>")
+          document.write("nombre:"+this.nombre+"<br>")
+          document.write("precio:"+this.precio+"<br>")
+        }
+      }
+      Producto.prototype.borraIngredientes=function(){
+        if (this.ingredientes.length>1) {
+          this.ingrdientes.pop();
+        }
+        else{
+          alert("solo queda un ingrediente");
+        }
+      }
+      Producto.prototype.buscaInfo=function(){
+        var url="https://www.google.es/#safe=strict&q="+this.nombre;
+        window.open(url,"","width=600,height=300");
+      }
+      Producto.prototype.verIngredientes=function(){
+        var ventana= window.open("","", "width=200,heigth=100");
+        ventana.document.write("ingredientes:<br>");
+        for (var i = 0; i < this.ingredientes.length; i++) {
+          ventana.document.write(this.ingredientes[i]+"<br>")
+        }
+        ventana.docuement.write("<input type=button name=Cerrar onclick=window.close()>")
+
+      }
+      var producto1 = new Productos("1","Pan",["agua", "harina", "levadura","sal"]);
+      var producto2 = new Productos("2","Café",["café arábiga", "café puaj"]);
+      var producto3 = new Productos("3","Pizza",["tomate","harina","agua","jamón","mozarrella","aceite","sal"]);
+      var Productos=new array(producto1,producto2,producto3);
+      for (var i = 0; i < Productos.length; i++) {
+        Productos[i].imprimeDatos();
+        
+      }
+
+    </script>
+  </head>
+  <body>
+
+
+
+  </body>
+</html>
