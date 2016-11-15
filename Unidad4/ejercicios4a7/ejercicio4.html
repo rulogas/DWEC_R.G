@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 4</title>
+    <script type="text/javascript">
+      function mostrar() {
+        document.getElementById('resultado').removeAttribute("hidden", "hidden");
+      }
+    </script>
+
+  </head>
+  <body>
+    <h1>Sugerencias</h1>
+    <form action="#" method="post">
+      <p class="destacado">Sugerencias:</p>
+      <br>
+      <textarea name="sugerencia" rows="20" cols="50" ></textarea>
+      <button type="button" name="button" onclick="mostrar()">Enviar</button>
+    </form>
+    <p id="resultado" >Gracias por participar</p>
+
+    <script type="text/javascript">
+
+      document.getElementsByTagName("h1")[0].innerText="Comentarios";
+      document.getElementsByClassName("destacado")[0].innerText="Comentarios en parrafo";
+      document.getElementById('resultado').setAttribute("hidden", "hidden");
+      document.getElementsByName('sugerencia').setAttribute("required", "required");
+
+
+
+    </script>
+    </script>
+  </body>
+
+</html>
