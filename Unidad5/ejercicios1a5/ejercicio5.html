@@ -7,25 +7,35 @@
 
       onwheel=function rueda(e) {
         if (e.wheelDelta>0) {
-          var tamanyoFuente=document.getElementsByTagName('h1')[0].style.fontSize;
-          var numeroFuente=tamanyoFuente.substr(0,2);
-          numeroFuente=numeroFuente*2+"px";
-          document.getElementsByTagName('h1')[0].style.fontSize=numeroFuente;
-          var tamanyoImagen=document.getElementsByTagName('img')[0].style.width;
-          var numeroImagen=tamanyoImagen.substr(0,3);
-          numeroImagen=numeroImagen*2+"px";
-          document.getElementsByTagName('img')[0].style.width=numeroImagen;
+          if (e.target.nodeName=="H1") {
+            var tamanyoFuente=document.getElementsByTagName('h1')[0].style.fontSize;
+            var numeroFuente=tamanyoFuente.substr(0,2);
+            numeroFuente=numeroFuente*2+"px";
+            document.getElementsByTagName('h1')[0].style.fontSize=numeroFuente;
+          }
+          else if (e.target.nodeName=="IMG") {
+            var tamanyoImagen=document.getElementsByTagName('img')[0].style.width;
+            var numeroImagen=tamanyoImagen.substr(0,3);
+            numeroImagen=numeroImagen*2+"px";
+            document.getElementsByTagName('img')[0].style.width=numeroImagen;
+          }
+
+
 
         }
          else {
-           var tamanyoFuente=document.getElementsByTagName('h1')[0].style.fontSize;
-           var numeroFuente=tamanyoFuente.substr(0,2);
-           numeroFuente=numeroFuente/2+"px";
-           document.getElementsByTagName('h1')[0].style.fontSize=numeroFuente;
-           var tamanyoImagen=document.getElementsByTagName('img')[0].style.width;
-           var numeroImagen=tamanyoImagen.substr(0,3);
-           numeroImagen=numeroImagen/2+"px";
-           document.getElementsByTagName('img')[0].style.width=numeroImagen;
+           if (e.target.nodeName=="H1") {
+             var tamanyoFuente=document.getElementsByTagName('h1')[0].style.fontSize;
+             var numeroFuente=tamanyoFuente.substr(0,2);
+             numeroFuente=numeroFuente/2+"px";
+             document.getElementsByTagName('h1')[0].style.fontSize=numeroFuente;
+           }
+           else if (e.target.nodeName=="IMG") {
+             var tamanyoImagen=document.getElementsByTagName('img')[0].style.width;
+             var numeroImagen=tamanyoImagen.substr(0,3);
+             numeroImagen=numeroImagen/2+"px";
+             document.getElementsByTagName('img')[0].style.width=numeroImagen;
+           }
          }
       }
     </script>
