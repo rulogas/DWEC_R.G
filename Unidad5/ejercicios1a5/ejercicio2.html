@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio2</title>
+    <script type="text/javascript">
+      function clickh1(){
+        document.body.getElementsByTagName('h1')[0].style.color="blue";
+
+      }
+      onmouseout=function(){
+        document.body.getElementsByTagName('h3')[0].style.visibility="hidden";
+      }
+      function pulsarBoton(e){
+        var divs=document.body.getElementsByTagName('div');
+        divs[0].style.padding="10px";
+        divs[0].style.backgroundColor="purple";
+      }
+
+    </script>
+  </head>
+  <body>
+    <h1 onclick="clickh1()">HOLA</h1>
+    <h2 >que tal?</h2>
+    <h3>como estas?</h3>
+    <div class="" onmousedown="pulsarBoton(this)">
+      <p onmouseup="document.body.getElementsByTagName('p')[0].style.color='white';">yo bien</p>
+    </div>
+    <script type="text/javascript">
+      document.getElementsByTagName('h2')[0].ondblclick=function() {
+        document.body.getElementsByTagName('h2')[0].style.color="red";
+      }
+    </script>
+  </body>
+</html>
