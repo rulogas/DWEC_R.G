@@ -9,15 +9,27 @@
     var gTeclasEdicion = [45, 43]; // - y + array de teclas zoom
     function redimensionaMas() {
       var ancho=document.getElementsByTagName('img')[0].width;
-      ancho=(ancho+incremento)+"px";
-      document.getElementsByTagName('img')[0].style.width=ancho;
+      if (ancho==1024) {
+        ancho=1024+"px";
+      }
+      else {
+        ancho=(ancho+incremento)+"px";
+        document.getElementsByTagName('img')[0].style.width=ancho;
+
+      }
 
 
     }
     function redimensionaMenos() {
       var ancho=document.getElementsByTagName('img')[0].width;
-      ancho=(ancho-incremento)+"px";
-      document.getElementsByTagName('img')[0].style.width=ancho;
+      if (ancho==150) {
+        ancho=150+"px";
+      }
+      else {
+        ancho=(ancho-incremento)+"px";
+        document.getElementsByTagName('img')[0].style.width=ancho;
+      }
+
 
     }
 
