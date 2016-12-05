@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicio10</title>
+  <script type="application/javascript">
+    var incremento = 25;
+
+    var gTeclasEdicion = [45, 43]; // - y + array de teclas zoom
+    function redimensionaMas() {
+      var ancho=document.getElementsByTagName('img')[0].width;
+      ancho=(ancho+incremento)+"px";
+      document.getElementsByTagName('img')[0].style.width=ancho;
+
+
+    }
+    function redimensionaMenos() {
+      var ancho=document.getElementsByTagName('img')[0].width;
+      ancho=(ancho-incremento)+"px";
+      document.getElementsByTagName('img')[0].style.width=ancho;
+
+    }
+
+    function manejaZoom(e) {
+
+      if (e.charCode==gTeclasEdicion[1]) {
+        redimensionaMas();
+      }
+      else if (e.charCode==gTeclasEdicion[0]) {
+        redimensionaMenos();
+      }
+    }
+  </script>
+  <body onkeypress="manejaZoom(event)">
+    <img src="http://vignette1.wikia.nocookie.net/elderscrolls/images/4/4c/IconoPC.png/revision/latest?cb=20131219182302&path-prefix=es" id="imagen" style="width:150px;">
+  </body>
+  </html>

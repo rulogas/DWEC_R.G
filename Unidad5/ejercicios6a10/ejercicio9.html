@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio9</title>
+
+
+	<script type="text/javascript">
+
+
+
+		var mover = 20;
+
+
+		onkeyup=function pulsar(event){
+			var tecla = event.keyCode;
+			if(tecla == 39){
+				document.getElementsByTagName('div')[0].style.marginLeft = (200+mover)+"px";
+				mover = mover +20;
+			}
+      else if(tecla == 37){
+				document.getElementsByTagName('div')[0].style.marginLeft = (200+(mover-20))+"px";
+				mover = mover - 20;
+			}
+      else if(tecla == 40){
+				document.getElementsByTagName('div')[0].style.marginTop = (200+mover)+"px";
+				mover = mover + 20;
+			}
+      else if(tecla == 38){
+
+				document.getElementsByTagName('div')[0].style.marginTop = (200+(mover-20))+"px";
+				mover = mover -20;
+			}
+
+		}
+
+	</script>
+</head>
+<body>
+	<h1>Pulsa una tecla</h1>
+  <div id="principal" class="" style="border: 1px solid black; width:300px; height:300px; background-color:yellow; margin: 200px; position:relative; ">
+
+  </div>
+</body>
+</html>
